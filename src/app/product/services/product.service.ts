@@ -1,10 +1,10 @@
 import {Injectable} from "@angular/core";
-import {Product} from "../shared/product.interface";
+import {Product} from "../interfaces/product.interface";
 import {Observable, of, shareReplay, Subject} from "rxjs";
 import {HttpClient} from "@angular/common/http";
 
 @Injectable({providedIn: "root"})
-export class HomeProductService{
+export class ProductService {
 
   constructor(private http:HttpClient) {
   }

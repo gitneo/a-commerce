@@ -1,11 +1,11 @@
 import {Component, OnDestroy, OnInit, Output} from "@angular/core";
 import {Observable, Subscription} from "rxjs";
-import {Product} from "../shared/product.interface";
-import {HomeProductService} from "./home-product.service";
-import {CartService} from "../cart/cart.service";
+import {Product} from "../interfaces/product.interface";
+import {ProductService} from "../services/product.service";
+import {CartService} from "../../cart/services/cart.service";
 
 @Component({
-  selector:'home-component',
+  selector:'product-component',
   template:`
         <!-- Content Header (Page header) -->
         <div class="content-header">
@@ -23,17 +23,17 @@ import {CartService} from "../cart/cart.service";
           </div><!-- /.container-fluid -->
         </div>
         <!-- /.content-header -->
-        <home-product-list [products]="products"></home-product-list>
+        <product-list [products]="products"></product-list>
   `,
   styleUrls:[]
 })
-export class HomeComponent implements OnInit, OnDestroy{
+export class ProductPageComponent implements OnInit, OnDestroy{
 
   @Output()products : Observable<Product[]>
   product: Product;
   subscription : Subscription | undefined; // never initialized
 
-  constructor(private productService : HomeProductService, private cartService : CartService) {}
+  constructor(private productService : ProductService, private cartService : CartService) {}
 
   ngOnInit(): void {
     this.products = this.productService.findProducts();

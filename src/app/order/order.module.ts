@@ -1,8 +1,8 @@
 import {NgModule} from "@angular/core";
 import {CommonModule} from "@angular/common";
 import {RouterModule, Routes} from "@angular/router";
-import {OrderComponent} from "./order.component";
-import {OrderReceiptComponent} from "./order-receipt.component";
+import {OrderComponent} from "./component/order.component";
+import {OrderSummaryComponent} from "./component/order-summary.component";
 
 const routes : Routes = [
   {path:'order', component:OrderComponent}
@@ -10,7 +10,7 @@ const routes : Routes = [
 @NgModule({
   declarations:[
     OrderComponent,
-    OrderReceiptComponent
+    OrderSummaryComponent
   ],
   imports:[
     CommonModule,

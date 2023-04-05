@@ -1,9 +1,9 @@
 import {Component, OnInit} from "@angular/core";
-import {CartService} from "./cart.service";
+import {CartService} from "../services/cart.service";
 import {Observable} from "rxjs";
-import {OrderService} from "../order/order.service";
-import {CartItem} from "../shared/cart-item.interface";
-import {Order} from "../shared/order";
+import {OrderService} from "../../order/services/order.service";
+import {CartItem} from "../interface/cart-item.interface";
+import {Order} from "../../order/interfaces/order";
 
 @Component({
   selector:'cart_summary',

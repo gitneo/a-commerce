@@ -1,7 +1,7 @@
 import {EventEmitter, Injectable} from "@angular/core";
-import {CartItem} from "../shared/cart-item.interface";
+import {CartItem} from "../interface/cart-item.interface";
 import {filter, from, map, Observable, of, reduce, Subject, tap, toArray} from "rxjs";
-import {Order} from "../shared/order";
+import {Order} from "../../order/interfaces/order";
 
 @Injectable({providedIn:"root"})
 export class CartService{

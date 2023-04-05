@@ -1,4 +1,4 @@
-import {CartItem} from "./cart-item.interface";
+import {CartItem} from "../../cart/interface/cart-item.interface";
 import {Observable} from "rxjs";
 
 export interface Order {

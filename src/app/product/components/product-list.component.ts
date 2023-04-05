@@ -1,10 +1,10 @@
 import {Component, Input, Output} from "@angular/core";
 import {Observable} from "rxjs";
-import {Product} from "../shared/product.interface";
-import {HomeProductService} from "./home-product.service";
+import {Product} from "../interfaces/product.interface";
+import {ProductService} from "../services/product.service";
 
 @Component({
-  selector:'home-product-list',
+  selector:'product-list',
   template:`
     <section class="content">
       <div class="container">
@@ -12,7 +12,7 @@ import {HomeProductService} from "./home-product.service";
           <div class="card-body">
             <div class="row">
               <div class="col-md-12 col-lg-6 col-xl-4" *ngFor ="let product of products | async">
-                <home-product [product]="product" ></home-product>
+                <product [product]="product" ></product>
               </div>
             </div>
           </div>
@@ -23,7 +23,7 @@ import {HomeProductService} from "./home-product.service";
   styleUrls:[]
 
 })
-export class HomeProductListComponent{
+export class ProductListComponent {
 
   @Input() products : Observable<Product[]>
 

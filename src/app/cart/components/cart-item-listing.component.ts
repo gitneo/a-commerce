@@ -1,7 +1,7 @@
 import {Component, Input, OnInit} from "@angular/core";
 import {Observable} from "rxjs";
-import {CartItem} from "../shared/cart-item.interface";
-import {CartService} from "./cart.service";
+import {CartItem} from "../interface/cart-item.interface";
+import {CartService} from "../services/cart.service";
 
 @Component({
   selector:'cart-product-listing',

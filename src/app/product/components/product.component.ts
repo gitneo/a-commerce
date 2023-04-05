@@ -1,11 +1,11 @@
 import {Component, Input, OnInit} from "@angular/core";
-import {HomeProductService} from "./home-product.service";
-import {Product} from "../shared/product.interface";
-import {CartItem} from "../shared/cart-item.interface";
-import {CartService} from "../cart/cart.service";
+import {ProductService} from "../services/product.service";
+import {Product} from "../interfaces/product.interface";
+import {CartItem} from "../../cart/interface/cart-item.interface";
+import {CartService} from "../../cart/services/cart.service";
 
 @Component({
-  selector:'home-product',
+  selector:'product',
   template:`
 
     <div class="card mb-2 p-3">
@@ -25,10 +25,10 @@ import {CartService} from "../cart/cart.service";
 
   `,
 })
-export class HomeProductComponent implements OnInit{
+export class ProductComponent implements OnInit{
 
   @Input()product :Product;
-  constructor(private homeProductService : HomeProductService) {}
+  constructor(private homeProductService : ProductService) {}
   ngOnInit(): void {
   }
 

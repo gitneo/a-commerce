@@ -1,9 +1,9 @@
 import {Component, OnDestroy, OnInit, Output} from "@angular/core";
-import {CartService} from "./cart.service";
+import {CartService} from "../services/cart.service";
 import {map, Observable, reduce, Subject, takeUntil, tap} from "rxjs";
-import {CartItem} from "../shared/cart-item.interface";
-import {Order} from "../shared/order";
-import {OrderService} from "../order/order.service";
+import {CartItem} from "../interface/cart-item.interface";
+import {Order} from "../../order/interfaces/order";
+import {OrderService} from "../../order/services/order.service";
 
 @Component({
   selector:'cart-component',
@@ -62,7 +62,7 @@ import {OrderService} from "../order/order.service";
   `,
   styleUrls:[]
 })
-export class CartComponent implements OnInit,OnDestroy{
+export class CartPageComponent implements OnInit,OnDestroy{
 
    @Output() cartItems : Observable<CartItem[]>
    unsubscribed  =  new Subject<void>();
@@ -108,7 +108,7 @@ export class CartComponent implements OnInit,OnDestroy{
       items: this.cartItems
     };
 
-    console.log("Create Order clicked: "+order.items.forEach(console.log));
+    console.log("Create OrderInterface clicked: "+order.items.forEach(console.log));
     this.orderService.createOrder(order);
 
   }

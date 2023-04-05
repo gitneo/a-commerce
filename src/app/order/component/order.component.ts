@@ -1,8 +1,8 @@
 import {Component, OnInit} from "@angular/core";
 import {Observable} from "rxjs";
-import {Order} from "../shared/order";
-import {OrderService} from "./order.service";
-import {CartService} from "../cart/cart.service";
+import {Order} from "../interfaces/order";
+import {OrderService} from "../services/order.service";
+import {CartService} from "../../cart/services/cart.service";
 
 @Component({
   selector:'order',
@@ -30,7 +30,7 @@ import {CartService} from "../cart/cart.service";
             <!-- Main content -->
             <div class="invoice p-3 mb-3" *ngFor="let order of orders | async">
               <!-- title row -->
-              <order-receipt [order]="order"></order-receipt>
+              <order-summary [order]="order"></order-summary>
 
             </div>
             <!-- /.invoice -->

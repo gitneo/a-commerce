@@ -1,8 +1,8 @@
 import {Component, Input} from "@angular/core";
-import {Order} from "../shared/order";
+import {Order} from "../interfaces/order";
 
 @Component({
-  selector: 'order-receipt',
+  selector: 'order-summary',
   template:`
     <div class="row">
       <div class="col-12">
@@ -64,6 +64,6 @@ import {Order} from "../shared/order";
     </div>
   `
 })
-export class OrderReceiptComponent{
+export class OrderSummaryComponent {
   @Input() order :Order;
 }

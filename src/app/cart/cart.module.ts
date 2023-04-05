@@ -1,15 +1,15 @@
 import {NgModule} from "@angular/core";
-import {CartComponent} from "./cart.component";
+import {CartPageComponent} from "./components/cart-page.component";
 import {CommonModule} from "@angular/common";
-import {CartItemListingComponent} from "./cart-item-listing.component";
+import {CartItemListingComponent} from "./components/cart-item-listing.component";
 import {CartRoutingModule} from "./cart-routing.module";
-import {CartItemComponent} from "./cart-item.component";
-import {CartSummaryComponent} from "./cart-summary.component";
+import {CartItemComponent} from "./components/cart-item.component";
+import {CartSummaryComponent} from "./components/cart-summary.component";
 import {ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations:[
-    CartComponent,
+    CartPageComponent,
     CartItemListingComponent,
     CartItemComponent,
     CartSummaryComponent
