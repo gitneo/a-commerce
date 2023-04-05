@@ -2,7 +2,6 @@ import {Component, OnInit} from "@angular/core";
 import {Observable} from "rxjs";
 import {Order} from "../interfaces/order";
 import {OrderService} from "../services/order.service";
-import {CartService} from "../../cart/services/cart.service";
 
 @Component({
   selector:'order',
@@ -46,7 +45,7 @@ export class OrderComponent implements OnInit{
 
   orders : Observable<Order[]>
 
-  constructor(private orderService : OrderService, private cartService : CartService) {}
+  constructor(private orderService : OrderService) {}
   ngOnInit(): void {
     this.orders = this.orderService.findOrders();
   }

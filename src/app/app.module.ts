@@ -3,10 +3,18 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import {ProductModule} from "./product/product.module";
-import {RouterModule} from "@angular/router";
+import {RouterModule, Routes} from "@angular/router";
 import {CartModule} from "./cart/cart.module";
-import {HttpClient, HttpClientModule} from "@angular/common/http";
+import {HttpClientModule} from "@angular/common/http";
 import {OrderModule} from "./order/order.module";
+
+
+
+const routes :Routes= [
+  {path:'product', loadChildren:() => import('../app/product/product.module').then(m => m.ProductModule)},
+  {path:'order', loadChildren:() => import('../app/order/order.module').then(m => m.OrderModule)},
+  {path:'cart', loadChildren:() => import('../app/cart/cart.module').then(m => m.CartModule)}
+]
 
 @NgModule({
   declarations: [
@@ -14,11 +22,11 @@ import {OrderModule} from "./order/order.module";
   ],
   imports: [
     BrowserModule,
-    ProductModule,
+    //ProductModule,
     HttpClientModule,
-    CartModule,
+    //CartModule,
     OrderModule,
-    RouterModule,
+    RouterModule.forRoot(routes),
   ],
   providers: [],
   bootstrap: [AppComponent]

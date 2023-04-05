@@ -4,11 +4,11 @@ import {ProductPageComponent} from "./components/product-page.component";
 
 
 const routes : Routes = [
-  {path:'product', component:ProductPageComponent}
+  {path:'', component:ProductPageComponent}
 ];
 
 @NgModule({
-  imports:[RouterModule.forRoot(routes)],
+  imports:[RouterModule.forChild(routes)],
   exports:[RouterModule]
 })
 export class ProductRoutingModule {}

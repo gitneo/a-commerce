@@ -3,18 +3,19 @@ import {CommonModule} from "@angular/common";
 import {RouterModule, Routes} from "@angular/router";
 import {OrderComponent} from "./component/order.component";
 import {OrderSummaryComponent} from "./component/order-summary.component";
+import {OrderRoutingModule} from "./order-routing.module";
 
-const routes : Routes = [
-  {path:'order', component:OrderComponent}
-]
+// const routes : Routes = [
+//   {path:'order', component:OrderComponent}
+// ]
 @NgModule({
   declarations:[
     OrderComponent,
-    OrderSummaryComponent
+    OrderSummaryComponent,
   ],
   imports:[
     CommonModule,
-    RouterModule.forChild(routes)
+    OrderRoutingModule
   ]
 })
 export class OrderModule{}
